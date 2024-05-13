@@ -11,7 +11,7 @@ func main() {
 		fmt.Println(i)
 	}
 	fmt.Println("--------------")
-	for i, n := range []int{0, 1, 2} {
+	for i, n := range []int{2, 3, 4} {
 		defer func() {
 			fmt.Println(i, n)
 		}()
@@ -19,7 +19,7 @@ func main() {
 	fmt.Println("--------------")
 
 	var m = map[*int]int{}
-	for i, n := range []int{1, 2, 3} {
+	for i, n := range []int{5, 6, 7} {
 		m[&i]++
 		m[&n]++
 	}
