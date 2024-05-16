@@ -7,11 +7,10 @@ import (
 
 /*
 从Go1.22开始
-• 反射可以动态创建无名类型(Array、Chan、Slice、Map、Func、)
-		○ 无法动态创建一个接口类型Struct
-• 反射无法声明一个新的类型
+  - 反射可以动态创建无名类型(Array、Chan、Slice、Map、Func、)
+    ○ 无法动态创建一个接口类型Struct
+  - 反射无法声明一个新的类型
 */
-
 func main() {
 
 	ta := reflect.ArrayOf(5, reflect.TypeOf(123))

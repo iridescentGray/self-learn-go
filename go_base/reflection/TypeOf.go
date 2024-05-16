@@ -25,21 +25,4 @@ func main() {
 	fmt.Println(reflect.TypeOf(a).Elem().Key())         // [16]int16
 	fmt.Println(reflect.TypeOf(a).Elem().Key().Kind())  // array
 	fmt.Println(reflect.TypeOf(a).Elem().Elem().Kind()) //slice
-
-	// 判断可比较
-	fmt.Println("-----Comparable------")
-	type C = map[int]int
-	var b int = 1
-	c := C{}
-	fmt.Println(reflect.TypeOf(b).Comparable()) // true
-	fmt.Println(reflect.TypeOf(c).Comparable()) // false  map不可比较
-
-	//判断可转换
-	fmt.Println("-----ConvertibleTo------")
-	var d rune = 1
-	var e int32 = 1
-	var f float64 = 1
-
-	fmt.Println(reflect.TypeOf(d).ConvertibleTo(reflect.TypeOf(e))) // true
-	fmt.Println(reflect.TypeOf(e).ConvertibleTo(reflect.TypeOf(f))) // true
 }

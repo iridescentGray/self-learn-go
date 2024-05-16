@@ -6,15 +6,14 @@ import (
 )
 
 /*
- */
+Implements
+判断实现
+*/
 type MyT []interface{ m() }
 
 func (MyT) m() {}
 
 func main() {
-
-	//判断实现
-	fmt.Println("-----Implements------")
 	Myt_type := reflect.TypeOf(MyT{})
 	empty_interface_type := reflect.TypeOf(new(interface{}))
 

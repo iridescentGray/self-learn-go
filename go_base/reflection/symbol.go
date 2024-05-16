@@ -18,7 +18,9 @@ type I interface {
 }
 
 /*
- */
+symbol
+Field/Method/Entering/Return value/Tag
+*/
 func main() {
 	//获取字段/入参/返回值
 	fmt.Println("-----Field------")
@@ -34,6 +36,8 @@ func main() {
 	// 包路径（PkgPath）是非导出字段（或者方法）的内在属性
 	fmt.Println(struct_type.Field(0).PkgPath) //  空
 	fmt.Println(struct_type.Field(1).PkgPath) // main
+
+	fmt.Println(struct_type.FieldByName("i")) // {i main main.I  8 [1] false} true
 
 	fmt.Println("-----Method------")
 	struct_F_type, struct_i_type := struct_type.Field(0).Type, struct_type.Field(1).Type
