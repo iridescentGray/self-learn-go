@@ -9,7 +9,7 @@ import (
 Go 1.17引入
 func Offsetof(selector ArbitraryType) uintptr
 取得一个结构体值的某个字段的地址相对于此结构体值的地址的偏移
-同一个结构体类型的不同值的对应相同字段，此函数的返回值总是相同的
+同一个结构体类型的不同值的对应相同字段,此函数的返回值总是相同的
 */
 func main() {
 	var x struct {

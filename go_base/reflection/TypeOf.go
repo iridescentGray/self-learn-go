@@ -7,7 +7,7 @@ import (
 
 /*
 reflect.TypeOf
-从一个任何非接口类型的值创建一个reflect.Type值，此reflect.Type值表示着此非接口值的类型
+从一个任何非接口类型的值创建一个reflect.Type值,此reflect.Type值表示着此非接口值的类型
 
 reflect.Type是接口类型
 它的方法能够查看到reflect.Type值所表示的Go类型的各种信息

@@ -9,7 +9,7 @@ func main() {
 	valueOf := reflect.ValueOf
 	m := map[string]int{"Unix": 1973, "Windows": 1985}
 	v := valueOf(m)
-	// 第二个实参为Value零值时，表示删除一个key-value
+	// 第二个实参为Value零值时,表示删除一个key-value
 	v.SetMapIndex(valueOf("Windows"), reflect.Value{})
 	//新增
 	v.SetMapIndex(valueOf("Linux"), valueOf(1991))

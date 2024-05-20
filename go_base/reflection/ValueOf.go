@@ -8,7 +8,7 @@ import (
 /*
 reflect.ValueOf
 
-从一个非接口类型的值创建一个reflect.Value值，reflect.Value值代表着此非接口值
+从一个非接口类型的值创建一个reflect.Value值,reflect.Value值代表着此非接口值
 
 reflect.Value有很多观察/操纵属主值的方法 (通过不合适方法调用会导致恐慌)
 结构体值的非导出字段不能通过反射来修改

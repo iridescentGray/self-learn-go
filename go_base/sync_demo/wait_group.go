@@ -23,5 +23,5 @@ func main() {
 	wg.Add(2) // 注册两个新任务。
 	go SayGreetings("hi!", 5)
 	go SayGreetings("hello!", 5)
-	wg.Wait() // 阻塞在这里，直到所有任务都已完成。
+	wg.Wait() // 阻塞在这里,直到所有任务都已完成。
 }

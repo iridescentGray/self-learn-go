@@ -36,7 +36,7 @@ func main() {
 		fmt.Println("n =", n)
 		fallthrough // 跳到下个代码块
 	case 5, 6, 7, 8:
-		// 一个新声明的n，它只在当前分支代码快内可见。
+		// 一个新声明的n,它只在当前分支代码快内可见。
 		n := 99
 		fmt.Println("n =", n) // 99
 		fallthrough

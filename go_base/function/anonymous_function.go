@@ -1,7 +1,7 @@
 package main
 
 func main() {
-	// 这个匿名函数没有输入参数，但有两个返回结果。
+	// 这个匿名函数没有输入参数,但有两个返回结果。
 	x, y := func() (int, int) {
 		println("This function has no parameters.")
 		return 3, 4

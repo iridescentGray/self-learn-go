@@ -19,6 +19,6 @@ func main() {
 	go SayGreetings("1-hi!", 10)
 	go SayGreetings("2-hello!", 10)
 
-	//睡眠后,主协程退出，不管其他协程是否结束
+	//睡眠后,主协程退出,不管其他协程是否结束
 	time.Sleep(3 * time.Second)
 }

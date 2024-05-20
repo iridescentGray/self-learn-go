@@ -14,7 +14,7 @@ func main() {
 	for k, v := range persons {
 		fmt.Println(k, v)
 
-		// 此修改不会反映到persons数组中，因为p
+		// 此修改不会反映到persons数组中,因为p
 		// 是persons数组的副本中的一个元素的副本。
 		v = 31
 	}

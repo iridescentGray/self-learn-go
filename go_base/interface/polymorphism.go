@@ -41,7 +41,7 @@ func (mf MultipleFilter) Process(inputs []int) []int {
 	return outs
 }
 
-// 在多态特性的帮助下，只需要一个filteAndPrint函数。
+// 在多态特性的帮助下,只需要一个filteAndPrint函数。
 func filteAndPrint(fltr Filter, unfiltered []int) []int {
 	// 在fltr参数上调用方法其实是调用fltr的动态值的方法。
 	filtered := fltr.Process(unfiltered)

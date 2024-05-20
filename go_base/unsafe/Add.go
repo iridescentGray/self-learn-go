@@ -10,7 +10,7 @@ Go 1.17引入
 func Add(ptr Pointer, len IntegerType) Pointer
 
 len 代表偏移距离
-在一个（非安全）指针表示的地址上添加一个偏移量，然后返回表示新地址的一个指针
+在一个（非安全）指针表示的地址上添加一个偏移量,然后返回表示新地址的一个指针
 */
 func main() {
 	a := [10]int{3: 3, 9: 9}
