@@ -25,5 +25,4 @@ func main() {
 	<-done // 阻塞在此,直到有值发送到done
 
 	fmt.Println("bye")
-
 }

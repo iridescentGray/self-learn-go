@@ -16,7 +16,6 @@ func main() {
 	}
 	go kickBall("张三")
 	go kickBall("李四")
-	go kickBall("王二麻子")
 	go kickBall("刘大")
 	ball <- "裁判"    // 开球
 	var c chan bool // 一个零值nil通道
