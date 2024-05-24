@@ -21,6 +21,7 @@ func main() {
 		go source(c)
 	}
 	rnd := <-c // 只有第一个回应被使用了
-	fmt.Println(time.Since(startTime))
 	fmt.Println(rnd)
+
+	fmt.Println(time.Since(startTime))
 }
