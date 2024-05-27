@@ -15,7 +15,7 @@ func RoughlyClose(ch chan int) (justClosed bool) {
 }
 
 /*
-使用异常控制流程
+使用异常关闭通道
 */
 func main() {
 	c := make(chan int)

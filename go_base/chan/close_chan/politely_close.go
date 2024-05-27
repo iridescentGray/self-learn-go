@@ -26,7 +26,10 @@ func isClosed2(c chan int) bool {
 }
 
 /*
-使用异常控制流程
+礼貌关闭
+
+缺点:
+SafeClose函数和同一个通道上的发送操作同时运行，则数据竞争可能发生
 */
 func main() {
 	mc := MyChannel{C: make(chan int)}

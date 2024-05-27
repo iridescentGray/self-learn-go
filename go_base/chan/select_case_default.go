@@ -2,6 +2,9 @@ package main
 
 import "fmt"
 
+/*
+default 的执行
+*/
 func main() {
 	var c chan struct{} // nil
 	select {
