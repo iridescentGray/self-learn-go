@@ -40,7 +40,7 @@ func main() {
 	go func() {
 		defer func() {
 			close(closed) //关闭此通道 第三方协程才不会阻塞
-			close(dataCh)
+			close(dataCh) //需要关闭,否则for range 死锁
 			fmt.Println("发送通道已关闭")
 		}()
 

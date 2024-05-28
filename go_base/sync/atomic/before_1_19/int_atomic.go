@@ -6,10 +6,13 @@ import (
 	"sync/atomic"
 )
 
+/*
+Go1.19前
+*/
 func main() {
 	var n int32
 	var wg sync.WaitGroup
-	for i := 0; i < 1000; i++ {
+	for i := 0; i < 10000; i++ {
 		wg.Add(1)
 		go func() {
 			atomic.AddInt32(&n, 1)
