@@ -18,9 +18,9 @@ func main() {
 		c string
 	}
 
-	fmt.Println(unsafe.Alignof(x.a)) // 8
-	fmt.Println(unsafe.Alignof(x.b)) // 1
-	fmt.Println(unsafe.Alignof(x.c)) // 8
-	fmt.Println(unsafe.Alignof(x))   // 8
+	fmt.Println(unsafe.Alignof(x.a)) // 8 int64
+	fmt.Println(unsafe.Alignof(x.b)) // 1 bool
+	fmt.Println(unsafe.Alignof(x.c)) // 8 string
+	fmt.Println(unsafe.Alignof(x))   // 8  struct
 
 }
