@@ -12,7 +12,7 @@ func main() {
 	}
 
 	// 此接口类型内嵌了一个近似类型。
-	// 它的类型集由所有底层类型为[]byte的类型组成。
+	// 它的类型集由所有底层类型为[]byte的类型组成
 	type AnyByteSlice = interface {
 		~[]byte
 	}

@@ -1,4 +1,4 @@
-module hello_demo
+module logrus_demo
 
 go 1.22.2
 
