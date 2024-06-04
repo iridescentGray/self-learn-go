@@ -11,7 +11,6 @@ func main() {
 	}).Info("A group of walrus emerges from the ocean")
 
 	log.SetFormatter(&log.JSONFormatter{})
-
 	log.WithFields(log.Fields{
 		"animal": "walrus",
 	}).Info("A group of walrus emerges from the ocean")
