@@ -1,0 +1,15 @@
+rpc:
+  enable: true
+  bind: :8080
+debug: false
+interval: 20
+out_put_path: ./
+cookies: 
+  a: "123"
+  b: "456"
+rooms: ["3","4"]
+numbers:
+  - 1
+  - 2
+  - 3
+ 
