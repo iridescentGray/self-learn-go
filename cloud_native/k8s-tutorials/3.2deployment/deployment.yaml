@@ -13,5 +13,5 @@ spec:
         app: hellok8s
     spec:
       containers:
-        - image: xxx/hellok8s:v1
+        - image: colorfulgray0/hellok8s:v2
           name: hellok8s-container
