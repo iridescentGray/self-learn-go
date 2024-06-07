@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hellok8s-deployment
+spec:
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hellok8s
+  template:
+    metadata:
+      labels:
+        app: hellok8s
+    spec:
+      containers:
+        - image: colorfulgray0/hellok8s:noready
+          name: hellok8s-container
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: 3000
+            initialDelaySeconds: 1 # 容器启动后要等待多少秒后才启动存活和就绪探测器,默认是 0 秒
+            successThreshold: 5 # 探测器在失败后，被视为成功的最小连续成功数。默认值是 1
+            # failureThreshold：  #探测失败后Kubernetes 的重试次数。 超过次数 Pod 会被打上未就绪的标签。默认值是 3
+            # timeoutSeconds：1  # 探测的超时后等待多少秒。默认值是 1 秒。最小值是 1
+            # periodSeconds：10  #执行探测的时间间隔（单位是秒）。默认是 10 秒。最小值是 1

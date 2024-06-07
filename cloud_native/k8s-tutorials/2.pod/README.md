@@ -1,40 +1,32 @@
-# Pod
+# Pod 公共命令
 
-## 创建一个 nginx pod,内部时 nginx-container
+## 创建 deployment
 
-    # create pod
-    kubectl apply -f nginx.yaml
+    kubectl apply -f pod.yaml
 
-    # 获取当前pod
+## 查看
+
+    # 获取所有pod
     kubectl get pods
-    // nginx-pod         1/1     Running   0           6s
 
-    # mapping nginx port to local
-    kubectl port-forward nginx-pod 4000:80
-
-## 微调 Pod 内部的 nginx-container
-
-    # 进入 Pod 内容器的 Shell
-    kubectl exec -it nginx-pod -- bash
-
-    # 修改nginx 的首页内容
-    echo "hello kubernetes by nginx!" > /usr/share/nginx/html/index.html
-
-    # mapping nginx port to local
-    kubectl port-forward nginx-pod 4000:80
-
-## Pod 相关的其他命令
-
-### 日志
+    # 查看 pod 详情
+    kubectl describe pod <pod name>
 
     # 跟踪Pod日志 (类似tail -f)
-    kubectl logs --follow nginx-pod
+    kubectl logs --follow <PodName>
 
-### 在 Pod 内执行命令
+## 操作 Pod
 
-    kubectl exec nginx-pod -- ls
+    #在 Pod 内执行命令
+    kubectl exec <PodName> -- ls
 
-### 删除 Pod
+    # 打开pod的shell
+    kubectl exec -it <PodName> -- bash
 
-    kubectl delete pod nginx-pod
+    # 转发Pod的端口
+    kubectl port-forward <PodName> 4000:80
+
+## 删除
+
+    kubectl delete pod <PodName>
     kubectl delete -f nginx.yaml

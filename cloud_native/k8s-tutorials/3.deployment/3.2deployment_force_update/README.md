@@ -1,14 +1,15 @@
-# deployment-2
+# deployment force update
 
-## 新
+    强制更新是更deployment的Pod的一个不优雅的方法,会直接替换掉运行中的Pod
 
-## Rolling Update(滚动更新)
+## 命令
 
-    # 构建2新镜像
+    # 构建v2新镜像
     docker build . -t colorfulgray0/hellok8s:v2
-
-    # 推送到远程
     docker push colorfulgray0/hellok8s:v2
+
+    # 部署
+    kubectl apply -f deployment.yaml
 
     # 查看获取deployment创建的pod
     kubectl get pods

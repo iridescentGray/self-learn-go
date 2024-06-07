@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hellok8s-deployment
+spec:
+  # 特色
+  strategy:
+    # recreate  在新版本的 pod 增加前，先将所有旧版本 pod 删除
+    rollingUpdate: # 逐渐增加新版本的 pod，逐渐减少旧版本的 pod
+      maxSurge: 2 # 最大峰值，指定可以创建的超出期望 Pod 个数的 Pod 数量
+      maxUnavailable: 1 # 最大不可用，指定更新过程中不可用的 Pod 的个数上限
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hellok8s
+  template:
+    metadata:
+      labels:
+        app: hellok8s
+    spec:
+      containers:
+        - image: colorfulgray0/hellok8s:v3
+          name: hellok8s-container

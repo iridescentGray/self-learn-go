@@ -1,4 +1,6 @@
-# deployment
+# deployment base demo
+
+    展示 deployment的基础用法
 
 ## 定义 deployment.yaml
 
@@ -21,7 +23,7 @@
     # 转发端口并查看 http://localhost:3000
     kubectl port-forward hellok8s-deployment-6599d47755-9j5d9 3000:3000
 
-## 尝试删除由 deployment 创建的 pod，发现删除后会重新创建
+## 尝试删除 Pod
 
     # 打开一个终端观察pod的变化
     kubectl get pods --watch
@@ -29,5 +31,5 @@
     # 删除 deployment 创建的 pod
     kubectl delete pod <pod_name>
 
-    # 发现删除后会重新创建
+    # 发现Pod删除后会重新创建
     kubectl get pods
