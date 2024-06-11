@@ -1,6 +1,6 @@
 # Pod
 
-## 创建一个 nginx pod,内部时 nginx-container
+## 创建一个 nginx pod,内部是 nginx-container
 
     # 创建 pod
     kubectl apply -f nginx.yaml

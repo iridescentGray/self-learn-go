@@ -1,3 +1,7 @@
+# Pod
+
+内部管理多个 container
+
 # Pod 公共命令
 
 ## 创建 deployment
@@ -28,5 +32,9 @@
 
 ## 删除
 
+    # 删除单个
     kubectl delete pod <PodName>
+    # 删除-根据文件
     kubectl delete -f nginx.yaml
+    # 删除全部
+    kubectl delete pod --all

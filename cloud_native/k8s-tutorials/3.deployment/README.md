@@ -1,3 +1,7 @@
+# Pod
+
+内部管理 Pod,为 Pod 创建多个 replicas
+
 # deployment 公共命令
 
 ## 创建 deployment
@@ -21,3 +25,5 @@
 
     # 删除指定的deployment
     kubectl delete deployment <Name>
+    # 删除全部
+    kubectl delete deployment --all
