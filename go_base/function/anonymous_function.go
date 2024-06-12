@@ -22,7 +22,7 @@ func main() {
 		println("x*x + y*y =", x*x+y*y) // x*x + y*y = 25
 	}() // 不需传递实参。
 
-	f = func() {
+	f := func() {
 		println("x*x + y*y =", x*x+y*y) // x*x + y*y = 25
 	}
 	println(f)

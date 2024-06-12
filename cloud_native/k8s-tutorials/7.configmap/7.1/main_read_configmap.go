@@ -8,9 +8,9 @@ import (
 )
 
 func hello(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("/hello exec")
 	host, _ := os.Hostname()
-	io.WriteString(w, fmt.Sprintf("[service-host] Hello, Kubernetes!, From host: %s", host))
+	dbURL := os.Getenv("DB_URL")
+	io.WriteString(w, fmt.Sprintf("[v4] Hello, Kubernetes! From host: %s, Get Database Connect URL: %s", host, dbURL))
 }
 
 func main() {

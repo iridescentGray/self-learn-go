@@ -1,4 +1,4 @@
-# 创建 service -cluster Ip
+# 创建 service cluster ip
 
 ## 先 deployment
 

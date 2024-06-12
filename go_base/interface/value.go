@@ -28,9 +28,9 @@ func main() {
 	i = a
 	fmt.Println(i) // &{Go语言101}
 
-	var i interface{}
-	i = []int{1, 2, 3}
-	fmt.Println(i) // [1 2 3]
-	i = map[string]int{"Go": 2012}
-	fmt.Println(i) // map[Go:2012]
+	var b interface{}
+	b = []int{1, 2, 3}
+	fmt.Println(b) // [1 2 3]
+	b = map[string]int{"Go": 2012}
+	fmt.Println(b) // map[Go:2012]
 }

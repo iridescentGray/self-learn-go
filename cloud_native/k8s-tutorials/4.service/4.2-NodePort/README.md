@@ -1,4 +1,4 @@
-# 创建 service -NodePort
+# 创建 service nodePort
 
 将 hellok8s:host 的 3000 端口映射到 k8s Node 机器的 30000 端口
 可以通过访问 http://node1-ip:30000 或者 http://node2-ip:30000 访问到服务。
