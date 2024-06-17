@@ -17,12 +17,15 @@
     # 查看全部namespace的ConfigMap
     kubectl get configmap --all-namespaces
 
+    # 查看详情
+    kubectl describe configmap <map_name> -n <namespace>
+
 ## 使用 ConfigMap
 
-- kubectl apply -f deployment.yaml -n dev
-- kubectl get pods -n dev
+    # configMap的内容会添加到Env中
+    os.Getenv("configmap中的内容")
 
 ## 删除
 
     # 删除指定的ConfigMap
-    kubectl delete ConfigMap <Name>
+    kubectl delete configmap <Name>

@@ -9,8 +9,8 @@ import (
 
 func hello(w http.ResponseWriter, r *http.Request) {
 	host, _ := os.Hostname()
-	dbURL := os.Getenv("DB_URL")
-	io.WriteString(w, fmt.Sprintf("[configmap]Hello, Kubernetes! From host: %s, Get Database Connect URL: %s", host, dbURL))
+	dbPassword := os.Getenv("DB_PASSWORD")
+	io.WriteString(w, fmt.Sprintf("[Secret] Hello, Kubernetes! From host: %s, Get Database Connect Password: %s", host, dbPassword))
 }
 
 func main() {
