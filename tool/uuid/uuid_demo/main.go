@@ -31,7 +31,7 @@ func isValidUUID(str string) {
 }
 
 /*
-go run base.go
+go run main.go
 */
 func main() {
 	generateUUID()
