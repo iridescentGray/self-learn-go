@@ -6,8 +6,16 @@ import (
 )
 
 /*
-DeepEqual类型相同的情况下才返回true。 比较元素中含有函数值的容器值或者比较字段中含有函数值的结构体值也是类似的。
-若两个同类型切片共享相同的元素序列（长度/元素的地址相同）DeepEqual比较true
+-DeepEqual类型相同时=true，不相同是总=false
+-然后DeepEqual将比较x和y所引用的两个值
+
+	-若两个同类型切片、共享相同的元素序列(长度/元素的地址相同),则DeepEqual=true
+
+DeepEqual和==的区别
+1.DeepEqual(x, y)无论如何不产生恐慌，x == y在比较不可比较类型时将产生一个恐慌
+2.x,y类型不相同，DeepEqual(x, y)总为false，但x == y可能为true
+3.x,y类型相同，值不同，DeepEqual(x, y)可能为true，x == y总为false
+4.x,y处于循环引用链中时，DeepEqual调用的结果可能为true(防止死循环)
 */
 func main() {
 	type Book struct{ page int } //具名结构体
@@ -32,19 +40,19 @@ func main() {
 	var q, r Node
 	q.peer = &q // 形成一个循环引用链
 
-	fmt.Println(reflect.DeepEqual(&q, &r))
-	fmt.Println(q == r) // false
+	fmt.Println(reflect.DeepEqual(&q, &r)) // false
+	fmt.Println(q == r)                    // false
 
 	fmt.Println("-----方法------")
 	var f1 func() = nil
 	var f2 func() = func() {}
 
 	fmt.Println(reflect.DeepEqual(f1, f1)) // true
-	fmt.Println(reflect.DeepEqual(f2, f2)) // false 匿名函数比较总是false
+	fmt.Println(reflect.DeepEqual(f2, f2)) // 匿名函数总是false
 	fmt.Println(reflect.DeepEqual(f1, f2)) // false
 
 	fmt.Println("-----切片比较------")
 	var a, b interface{} = []int{1, 2}, []int{1, 2}
 	fmt.Println(reflect.DeepEqual(a, b)) // true
-	fmt.Println(a == b)                  // 产生恐慌
+	fmt.Println(a == b)                  // 恐慌
 }
