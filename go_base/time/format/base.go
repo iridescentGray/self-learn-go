@@ -22,4 +22,5 @@ func main() {
 	// 格式化为 "HH:mm:ss"
 	timeOnly := now.Format("15:04:05")
 	fmt.Println("Time Only:", timeOnly)
+
 }
